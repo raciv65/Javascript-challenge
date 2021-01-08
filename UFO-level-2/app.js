@@ -94,6 +94,10 @@ Table();
   function CountryFuntion(){
     var country_list = document.getElementById("Country_select")
     document.getElementById("country").value=country_list.options[country_list.selectedIndex].value;
+    document.getElementById("shape").value=''
+    document.getElementById("datetime").value=''
+    document.getElementById("city").value=''
+    document.getElementById("state").value=''
     SerchCountry()
   }
 //*************************************************************************************************************** */  
@@ -135,6 +139,10 @@ Table();
   function DateFuntion(){
     var date_list = document.getElementById("Date_select")
     document.getElementById("datetime").value=date_list.options[date_list.selectedIndex].value;
+    document.getElementById("shape").value=''
+    document.getElementById("country").value=''
+    document.getElementById("city").value=''
+    document.getElementById("state").value=''
     SerchDate()
   }
 //*************************************************************************************************************** */ 
@@ -176,6 +184,10 @@ Table();
   function CityFuntion(){
     var city_list = document.getElementById("City_select")
     document.getElementById("city").value=city_list.options[city_list.selectedIndex].value;
+    document.getElementById("shape").value=''
+    document.getElementById("datetime").value=''
+    document.getElementById("country").value=''
+    document.getElementById("state").value=''
     SerchCity()
   }
 //*
@@ -217,6 +229,10 @@ Table();
   function StateFuntion(){
     var state_list = document.getElementById("State_select")
     document.getElementById("state").value=state_list.options[state_list.selectedIndex].value;
+    document.getElementById("shape").value=''
+    document.getElementById("datetime").value=''
+    document.getElementById("city").value=''
+    document.getElementById("country").value=''
     SerchState()
   }
 //*
@@ -258,6 +274,10 @@ Table();
   function ShapeFuntion(){
     var shape_list = document.getElementById("Shape_select")
     document.getElementById("shape").value=shape_list.options[shape_list.selectedIndex].value;
+    document.getElementById("country").value=''
+    document.getElementById("datetime").value=''
+    document.getElementById("city").value=''
+    document.getElementById("state").value=''
     SerchShape()
   }
 //*
