@@ -15,17 +15,39 @@ var $tbody = document.querySelector("tbody");
 var $UserDateInput = document.querySelector("#datetime");
 var $SearchBtn = document.querySelector("#filter-btn");
 
-//Filter information with the date of user
-function SerchDate(event){
-    let target=$UserDateInput.value.trim();
-    if (target!=""){
-        tableData=data.filter(
-            function (data){
-                let targetData=data.datetime;
-                return targetData===target
-            }
-        )
-    }
+// When clik filter button
+$SearchBtn.addEventListener("click", SerchDate);
+
+// Table with data in the body of html
+function Table() {
+  $tbody.innerHTML = "";
+  for (var i = 0; i < DataForApp.length; i++) {
+    //Data without filter
+    var data = DataForApp[i];
+    var fields = Object.keys(data); //Keys of data: datatime, city, state, country, shape, etc
+    // set row of the data
+    var $row = $tbody.insertRow(i);
+    // For ech row fill cell without filter
+        for (var j = 0; j < fields.length; j++) {
+        var field = fields[j];
+        var $cell = $row.insertCell(j);
+        $cell.innerText = data[field];
+        }
+  }
 }
 
-//
+//Filter information with the date of user
+function SerchDate(event) {
+
+  var filterDate = $UserDateInput.value.trim();
+  if (filterDate != "") {
+    DataForApp = data.filter(function (data) {
+      var dataDate = data.datetime;
+      return dataDate === filterDate;
+    });
+};
+Table();
+  }
+
+// Show table complete
+Table();
