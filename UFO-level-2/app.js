@@ -1,5 +1,3 @@
-console.log('ok')
-console.log('ok')
 //Instructions
 // Create a basic HTML web page or use the index.html file provided (we recommend building your own custom page!).
 //Using the UFO dataset provided in the form of an array of JavaScript objects, write code that appends a table to your web page and then adds new rows of data for each UFO sighting.
@@ -10,10 +8,64 @@ console.log('ok')
 
 var DataForApp=data;
 
+
+// Create array with unique labels 
+var Cities=[];
+var States=[];
+var Countries=[];
+var Saphes=[];
+
+for (var k=0; k<DataForApp.length; k++){
+  let city_k=DataForApp[k]['city'];
+  let state_k=DataForApp[k]['state'];
+  let country_k=DataForApp[k]['country'];
+  let shape_k=DataForApp[k]['shape'];
+  
+  Cities.push(city_k);
+  States.push(state_k);
+  Countries.push(country_k);
+  Saphes.push(shape_k);
+};
+
+// Unique values in array
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+
+// List aviable For Countries
+var array_countries=Countries.filter(onlyUnique)  
+// Get dropdown element
+var dropdown_country = document.getElementById("Country_select");
+
+// Loop through the array for countries
+for (var i = 0; i < array_countries.length; ++i) {
+    // Append the element to the end of Array list
+    dropdown_country[dropdown_country.length] = new Option(array_countries[i], array_countries[i]);
+}
+
+function CountryFuntion(){
+  var country_list = document.getElementById("Country_select")
+  document.getElementById("country").value=country_list.options[country_list.selectedIndex].value;
+  
+}
+
+document.getElementById("Country_select").addEventListener("click", CountryFuntion)
+
+
+
+
+
+
 // Retive user date for search as objects
 var $tbody = document.querySelector("tbody");
 var $UserDateInput = document.querySelector("#datetime");
 var $SearchBtn = document.querySelector("#filter-btn");
+
+var $UserCountryInput=document.querySelector("#country");
+
+
 
 // When clik filter button
 $SearchBtn.addEventListener("click", SerchDate);
@@ -40,34 +92,27 @@ function Table() {
 function SerchDate(event) {
 
   var filterDate = $UserDateInput.value.trim();
-  if (filterDate != "") {
+  var filterCountry=$UserCountryInput.value.trim();
+
+  if (filterCountry != "") {
     DataForApp = data.filter(function (data) {
-      var dataDate = data.datetime;
-      return dataDate === filterDate;
+      var dataCountry = data.country;
+      return dataCountry === filterCountry;
     });
+  
 };
+
+
+
+
 Table();
   }
 
 // Show table complete
 Table();
 
-// Create array with unique labels 
-var Cities=[];
-var States=[];
-var Countries=[];
-var Saphes=[];
 
-for (var k=0; k<DataForApp.length; k++){
-  let city_k=DataForApp[k]['city'];
-  let state_k=DataForApp[k]['state'];
-  let country_k=DataForApp[k]['country'];
-  let shape_k=DataForApp[k]['shape'];
-  
-  Cities.push(city_k);
-  States.push(state_k);
-  Countries.push(country_k);
-  Saphes.push(shape_k);
-};
+
+
 
 
