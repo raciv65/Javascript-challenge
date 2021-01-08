@@ -36,8 +36,13 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="d/mm/yyyy">
+                        <label for="date">By Date</label>
+                        <hr>
+                        <select name="Date_select" id="Date_select" class="btn btn-default">
+
+                          <input class="form-control" id="datetime" type="text">
+                        </select>
+                        
                       </li>
                     </ul>
                     </div>
@@ -46,28 +51,65 @@
                   <div class="form-group">
                   <ul class="list-group" id="filters_country">
                     <li class="filter list-group-item">
-                      <label for="country">Select Country</label>
+                      <label for="country">By Country</label>
                       <hr>
                       <select id="Country_select" class="btn btn-default">
-                      <p> Your selected Country:
-                        <input class="form-control" id="country" type="text">
-                      </p>
                       
+                        <input class="form-control" id="country" type="text">
+                             
 
                       </select>
                     </li>
                   </ul>
                   </div>
+                  
+                       <!--Cities-->
+                  <div class="form-group">
+                  <ul class="list-group" id="filters_cities">
+                    <li class="filter list-group-item">
+                      <label for="cities">By City</label>
+                      <hr>
+                      <select id="City_select" class="btn btn-default">
+                      
+                        <input class="form-control" id="city" type="text">
+                             
 
+                      </select>
+                    </li>
+                  </ul>
+                  </div>
+                
+                      <!--State-->
+                      <div class="form-group">
+                        <ul class="list-group" id="filters_states">
+                          <li class="filter list-group-item">
+                            <label for="states">By State</label>
+                            <hr>
+                            <select id="State_select" class="btn btn-default">
+                            
+                              <input class="form-control" id="state" type="text">
+                                   
+      
+                            </select>
+                          </li>
+                        </ul>
+                        </div>
 
-
-
-
-
-                  <!--Button for filter-->
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter</button>
-
-
+                     <!--Shape-->
+                     <div class="form-group">
+                      <ul class="list-group" id="filters_shape">
+                        <li class="filter list-group-item">
+                          <label for="shape">By Shape</label>
+                          <hr>
+                          <select id="Shape_select" class="btn btn-default">
+                          
+                            <input class="form-control" id="shape" type="text">
+                                 
+    
+                          </select>
+                        </li>
+                      </ul>
+                      </div>
 
 
 
